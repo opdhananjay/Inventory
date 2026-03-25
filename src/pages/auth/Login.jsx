@@ -1,7 +1,12 @@
 import { useState } from "react";
+import { loginService } from "../../services/authService";
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
+   const navigate = useNavigate();
+   const { login,logout,loading } = useAuth();
    const [formData,setFormData] = useState({
         email:'',
         password:''
@@ -24,7 +29,10 @@ const Login = () => {
       console.log('formdata',formData);
 
       // API CALL | 
-        
+      // const data = login(formData);
+      if(true){
+        navigate('/dashboard');
+      }
 
       setFormData({
         email:'',
@@ -68,7 +76,7 @@ const Login = () => {
                             value={formData.password} onChange={handleChange} />
                         </div>
                         
-                        <button className="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 cursor-pointer transition">
+                        <button className="bg-green-600 text-white py-2 rounded-md hover:bg-green-600 focus:ring-2 focus:ring-blue-600 cursor-pointer transition">
                             Submit 
                         </button>
 

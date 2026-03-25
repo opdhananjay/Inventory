@@ -1,13 +1,21 @@
 import { Outlet } from "react-router-dom"
 import Header from "./Header"
 import Footer from "./Footer"
+import Sidebar from "./Sidebar"
+import { useState } from "react"
 
 const Layout = () => {
+
+    const [isSidebarOpen,setIsSidebarOpen] = useState(false);
+
     return (
         <div className="layout">
-            <Header/>
+            <Header toggleSidebar={()=>setIsSidebarOpen((prev) => !prev)} />
             <div className="main-layout">
-                <Outlet/>      
+                <Sidebar isOpen={isSidebarOpen} />
+                <div className="content">
+                    <Outlet/>   
+                </div>   
             </div>
             <Footer/>
         </div>
