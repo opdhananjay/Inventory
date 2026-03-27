@@ -1,7 +1,7 @@
 const Header = ({ toggleSidebar }) => {
     return (
         <>
-           <header className="flex items-center justify-between bg-white shadow px-4 py-3">
+           <header className="flex items-center justify-between bg-white shadow px-4 py-4">
                 
                 {/* Left Section */}
                 <div className="flex items-center gap-4">
