@@ -1,3 +1,5 @@
+import { useForm } from "react-hook-form";
+
 const AddCustomer = ({onSubmit}) => {
 
      const {register,handleSubmit,formState:{errors,isValid},reset} = useForm();

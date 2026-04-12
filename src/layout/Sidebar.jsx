@@ -1,3 +1,4 @@
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { Children, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -117,7 +118,7 @@ const Sidebar = ({isOpen}) => {
 
                                         <div className="cursor-pointer p-2 hover:bg-gray-200 rounded flex justify-between" onClick={()=>{setOpenMenu(openMenu == index ? null : index)}}>
                                             {item.name}
-                                            <span>{openMenu == index ? "▲" : "▼"}</span>
+                                            <span>{openMenu == index ? <ChevronUp/> :  <ChevronDown /> }</span>
                                         </div>
 
                                         {/* Submenu */}
